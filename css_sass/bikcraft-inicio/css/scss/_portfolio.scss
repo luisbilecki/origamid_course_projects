@@ -11,9 +11,9 @@
 
 .quote_clientes p{
 	text-align: center;
-	@include tipo-2(18);
 	font-style: italic;
 	margin-bottom: 20px;
+	@include tipo-2(18);
 }
 
 .quote_clientes cite {
@@ -78,6 +78,6 @@
 }
 
 .rslides_tabs li a:hover, .rslides_tabs li.rslides_here a {
-	background: #fec63e;
-	color: #fec63e;
+	background: $amarelo;
+	color: $amarelo;
 }
