@@ -119,3 +119,7 @@
     content: '';
     display: table;
     clear: both; }
+
+div {
+  font-family: 'Aref Ruqaa', serif;
+  font-family: 'PT Mono', monospace; }
