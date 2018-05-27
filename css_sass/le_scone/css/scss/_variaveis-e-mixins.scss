@@ -14,7 +14,8 @@ $fonte-2: 'Aref Ruqaa', serif;
 }
 
 @mixin tipo-1($size) {
-	font-family: $fonte-1;
+  font-family: $fonte-1;
+  
 	@if $size == 18 {
 		font-size: em(18);
 		line-height: em(30, 18);
@@ -22,7 +23,8 @@ $fonte-2: 'Aref Ruqaa', serif;
 }
 
 @mixin tipo-2($size) {
-	font-family: $fonte-2;
+  font-family: $fonte-2;
+  
 	@if $size == 18 {
 		font-size: em(18);
 		line-height: em(30, 18);
