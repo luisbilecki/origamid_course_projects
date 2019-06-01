@@ -3,6 +3,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
+const concat = require('gulp-concat');
 
 // Function for sass compiling and autoprefixing
 function compileSass() {
@@ -22,6 +23,16 @@ function compileSass() {
 // Gulp task for sass compilation
 gulp.task('sass', compileSass);
 
+// Grouping multiple js files
+function gulpJS() {
+  return gulp
+  .src('js/main/*.js')
+  .pipe(concat('main.js'))
+  .pipe(gulp.dest('js/'))
+}
+
+gulp.task('mainjs', gulpJS);
+
 // Init browser-sync lib
 function browser() {
   browserSync.init({
@@ -37,6 +48,7 @@ gulp.task('browser-sync', browser);
 // Watching for changes in html and scss files
 function watch() {
   gulp.watch('css/scss/*.scss', compileSass);
+  gulp.watch('js/main/*.js', gulpJS);
   gulp.watch(['*.html']).on('change', browserSync.reload);
 }
 
@@ -44,4 +56,4 @@ function watch() {
 gulp.task('watch', watch);
 
 // Gulp's default task which inits watch and browser-sync
-gulp.task('default', gulp.parallel('watch', 'browser-sync'));
+gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'mainjs'));
