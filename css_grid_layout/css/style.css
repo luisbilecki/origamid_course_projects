@@ -30,7 +30,7 @@ img {
 
 .estrutura {
   display: grid;
-  grid-template-columns: minmax(160px, 1fr) 1fr 300px;
+  grid-template-columns: minmax(160px, 1fr) 3fr 300px;
   grid-template-areas:
     "header header header"
     "sidenav content anuncios"
@@ -53,6 +53,7 @@ img {
 
 .header nav ul {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .header nav a {
@@ -106,7 +107,7 @@ img {
   padding: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
+  gap: 30px;
 }
 
 .col-wide {
@@ -191,6 +192,41 @@ p {
   top: 2px;
 }
 
+.destaque {
+  font-size: 0.875em;
+  color: #b07dfb;
+  max-width: 16em;
+}
+
+.citacao,
+.atributos {
+  align-self: start;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+}
+
+.citacao p {
+  font-size: 1.5em;
+  font-style: italic;
+  text-align: center;
+  color: white;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.atributos li {
+  color: white;
+  font-family: Courier, monospace;
+  font-size: 1.125em;
+  padding: 15px;
+}
+
+.atributos li + li {
+  border-top: 2px solid #b07dfb;
+}
+
 /* ANUNCIOS */
 
 .anuncios {
@@ -199,7 +235,7 @@ p {
   display: grid;
   align-content: start;
   padding: 30px;
-  grid-gap: 30px;
+  gap: 30px;
 }
 
 /* FOOTER */
